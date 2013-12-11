@@ -1,0 +1,12 @@
+!!com.taro.backspring.Configuration
+backupStrategyType: MOCK
+filter:
+  excludes: ['.gvfs/']
+  includes: ['*']
+name: My Configuration
+!! Use schedule: 0 0 * * * ? to run every hour
+schedule: 30 * * * * ?
+runNow: false
+sourceDirectory: /home/foo
+targetDirectory: /media/backup
+logging: FALSE
