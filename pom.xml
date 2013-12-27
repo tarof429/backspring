@@ -195,12 +195,13 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>appassembler-maven-plugin</artifactId>
-				<version>1.0</version>
+				<version>1.7</version>
 				<configuration>
 					<repositoryLayout>flat</repositoryLayout>
 					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
 					<extrajvmArguments>-Dbasedir=.</extrajvmArguments>
 					<extraJvmArguments>-Xms64m</extraJvmArguments>
+					<configurationDirectory>conf</configurationDirectory>
 					<daemons>
 						<daemon>
 							<id>backspring-main</id>

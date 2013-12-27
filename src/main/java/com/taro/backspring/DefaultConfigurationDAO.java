@@ -24,6 +24,8 @@ public class DefaultConfigurationDAO implements ConfigurationDAO {
 	public String getConfigFile() {
 		configFile = System.getProperty("basedir", ".") + "/conf/config.yml";
 
+		logger.info("Loading config file from: " + configFile);
+		
 		return configFile;
 	}
 

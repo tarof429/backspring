@@ -25,6 +25,7 @@ public class Main {
 		try {
 			backupManager.runScheduledBackup();
 		} catch (Exception e) {
+			e.printStackTrace();
 			logger.error(e.getMessage());
 		} finally {
 			backupManager.stopScheduledBackup();

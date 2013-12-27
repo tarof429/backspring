@@ -86,6 +86,7 @@ public class RsyncBackupStrategy extends AbstractBackupStrategy {
 			executor.execute(commandLine);
 			logger.info("RsyncBackupStrategy finished.");
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new BackupException(e);
 		}
 	}
