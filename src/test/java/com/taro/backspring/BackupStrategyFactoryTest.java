@@ -29,8 +29,7 @@ public class BackupStrategyFactoryTest extends AbstractTest {
 
 		for (BackupStrategyType strategy : BackupStrategyType.values()) {
 			config.setBackupStrategyType(strategy);
-			BackupStrategy backupStrategy = backupStrategyFactory
-					.getBackupStrategy(config);
+
 			Assert.assertEquals(strategy, config.getBackupStrategyType());
 		}
 	}

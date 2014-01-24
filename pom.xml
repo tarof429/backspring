@@ -164,7 +164,9 @@
 			</plugin>
 
 			<plugin>
+			 	<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
 				<executions>
 					<execution>
 						<phase>process-test-resources</phase>
@@ -172,11 +174,11 @@
 							<goal>run</goal>
 						</goals>
 						<configuration>
-							<tasks>
+							<target>
 								<copy toDir="target/conf">
 									<fileset dir="${project.basedir}/src/main/footprint/conf"></fileset>
 								</copy>
-							</tasks>
+							</target>
 						</configuration>
 
 					</execution>

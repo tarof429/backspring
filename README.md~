@@ -15,7 +15,6 @@ A Java-based backup tool
   $ sudo service backspring start
 
   Run sudo service backspring to see all options.
-
 # Notes
 
 - If using rsync strategy, make sure you have read access to all files you want backed up to avoid rsync errors.
