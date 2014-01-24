@@ -18,8 +18,8 @@
 	</licenses>
 
 	<properties>
-		<org.springframework-version>3.0.4.RELEASE</org.springframework-version>
-		<org.slf4j-version>1.5.10</org.slf4j-version>
+		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
+		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<basedir>target</basedir>
 	</properties>
 
@@ -62,14 +62,14 @@
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>1.4</version>
+			<version>2.4</version>
 		</dependency>
 
 		<!-- Database -->
 		<dependency>
 			<groupId>org.yaml</groupId>
 			<artifactId>snakeyaml</artifactId>
-			<version>1.7</version>
+			<version>1.13</version>
 		</dependency>
 
 		<!-- Logging -->
@@ -93,7 +93,7 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.16</version>
+			<version>1.2.17</version>
 		</dependency>
 
 		<!-- @Inject -->
@@ -107,7 +107,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
+			<version>4.11</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -120,7 +120,7 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-exec</artifactId>
-			<version>1.0.1</version>
+			<version>1.2</version>
 		</dependency>
 
 		<!-- Cron -->
@@ -136,17 +136,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.5</version>
+				<version>2.16</version>
 			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.4</version>
+				<version>2.6</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.2</version>
+				<version>2.4</version>
 			</plugin>
 		</plugins>
 	</reporting>
@@ -256,7 +256,7 @@
 
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.2</version>
+				<version>2.4</version>
 				<configuration>
 					<descriptors>
 						<descriptor>${basedir}/src/main/assembly/src.xml</descriptor>
