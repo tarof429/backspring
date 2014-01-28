@@ -30,6 +30,12 @@
 		</repository>
 	</repositories>
 
+	<scm>
+		<connection>scm:git:git://github.com/taro4cycle/backspring.git</connection>
+		<developerConnection>scm:git:git://github.com/taro4cycle/backspring.git</developerConnection>
+		<url>https://github.com/taro4cycle/backspring</url>
+	</scm>
+
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
