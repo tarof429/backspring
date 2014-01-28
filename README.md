@@ -3,7 +3,7 @@ backspring
 
 # Description
 
-A Java-based backup tool
+A Java-based backup tool. The name comes from using Spring for DI.
 
 # Installation
 
