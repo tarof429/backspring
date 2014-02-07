@@ -30,9 +30,9 @@
 	</repositories>
 
 	<scm>
-		<connection>scm:git:git://github.com/taro4cycle/backspring.git</connection>
-		<developerConnection>scm:git:git://github.com/taro4cycle/backspring.git</developerConnection>
-		<url>https://github.com/taro4cycle/backspring</url>
+		<connection>scm:git:git@github.com/taro4cycle/backspring.git</connection>
+		<developerConnection>scm:git:git@github.com/taro4cycle/backspring.git</developerConnection>
+		<url>scm:git:git@github.com/taro4cycle/backspring</url>
 	  <tag>backspring-1.0.0</tag>
   </scm>
 
