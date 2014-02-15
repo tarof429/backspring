@@ -8,26 +8,17 @@
 	</formats>
 	<fileSets>
 		<fileSet>
-			<directory>${project.basedir}/src/main/footprint</directory>
-			<outputDirectory></outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.basedir}/target/generated-resources/appassembler/jsw/backspring-main/bin</directory>
+			<directory>${staging.directory}/bin</directory>
 			<outputDirectory>bin</outputDirectory>
-			<fileMode>755</fileMode>
+			<directoryMode>777</directoryMode>
+			<fileMode>777</fileMode>
 		</fileSet>
 		<fileSet>
-			<directory>${project.basedir}/target/generated-resources/appassembler/jsw/backspring-main/lib</directory>
-			<outputDirectory>lib</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.basedir}/target/generated-resources/appassembler/jsw/backspring-main/conf</directory>
-			<outputDirectory>conf</outputDirectory>
-		</fileSet>
-
-		<fileSet>
-			<directory>${project.basedir}/target/appassembler/repo</directory>
-			<outputDirectory>lib</outputDirectory>
+			<directory>${staging.directory}</directory>
+			<outputDirectory></outputDirectory>
+			<excludes>
+				<exclude>**/bin</exclude>
+			</excludes>
 		</fileSet>
 	</fileSets>
 </assembly>
