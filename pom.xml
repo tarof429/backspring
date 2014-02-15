@@ -4,8 +4,9 @@
 
 	<groupId>com.taro</groupId>
 	<artifactId>backspring</artifactId>
-	<name>BackSpring</name>
+	<name>BackSpring - Parent</name>
 	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 
 	<issueManagement>
 		<url>https://github.com/taro4cycle/backspring/issues</url>
@@ -37,16 +38,16 @@
 		<connection>scm:git:git@github.com/taro4cycle/backspring.git</connection>
 		<developerConnection>scm:git:git@github.com/taro4cycle/backspring.git</developerConnection>
 		<url>scm:git:git@github.com/taro4cycle/backspring</url>
-	  <tag>backspring-1.0.0</tag>
-  </scm>
+		<tag>backspring-1.0.0</tag>
+  	</scm>
 
-	<dependencies>
+  	<dependencyManagement>
+  		<dependencies>
 		<!-- Spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<scope>runtime</scope>
 			<exclusions>
 				<!-- Exclude Commons Logging in favor of SLF4j -->
 				<exclusion>
@@ -59,12 +60,6 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
-			<version>${org.springframework-version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
 
@@ -139,7 +134,10 @@
 			<artifactId>quartz</artifactId>
 			<version>1.5.2</version>
 		</dependency>
-	</dependencies>
+
+
+		</dependencies>
+  	</dependencyManagement>
 
 	<reporting>
 		<plugins>
@@ -162,7 +160,7 @@
 	</reporting>
 
 	<build>
-		<defaultGoal>package</defaultGoal>
+		<defaultGoal>install</defaultGoal>
 		<plugins>
 	     <plugin>
 	        <groupId>org.apache.maven.plugins</groupId>
@@ -176,118 +174,11 @@
 					<target>1.6</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
-			 	<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<version>1.7</version>
-				<executions>
-					<execution>
-						<phase>process-test-resources</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target>
-								<copy toDir="target/conf">
-									<fileset dir="${project.basedir}/src/main/footprint/conf" />
-								</copy>
-							</target>
-						</configuration>
-
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<basedir>target</basedir>
-				</configuration>
-			</plugin>
-
-
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>appassembler-maven-plugin</artifactId>
-				<version>1.7</version>
-				<configuration>
-					<repositoryLayout>flat</repositoryLayout>
-					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
-					<extrajvmArguments>-Dbasedir=.</extrajvmArguments>
-					<extraJvmArguments>-Xms64m</extraJvmArguments>
-					<configurationDirectory>conf</configurationDirectory>
-					<daemons>
-						<daemon>
-							<id>backspring-main</id>
-							<mainClass>com.taro.backspring.Main</mainClass>
-							<commandLineArguments>
-								<commandLineArgument>start</commandLineArgument>
-							</commandLineArguments>
-							<platforms>
-								<platform>jsw</platform>
-							</platforms>
-							<generatorConfigurations>
-								<generatorConfiguration>
-									<generator>jsw</generator>
-									<includes>
-										<include>linux-x86-32</include>
-										<include>linux-x86-64</include>
-									</includes>
-									<configuration>
-										<property>
-											<name>set.default.REPO_DIR</name>
-											<value>lib</value>
-										</property>
-										<property>
-											<name>wrapper.logfile</name>
-											<value>logs/wrapper.log</value>
-										</property>
-									</configuration>
-								</generatorConfiguration>
-							</generatorConfigurations>
-						</daemon>
-					</daemons>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-libs</id>
-						<goals>
-							<goal>create-repository</goal>
-						</goals>
-					</execution>
-					<execution>
-						<id>generate-jsw-scripts</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>generate-daemons</goal>
-						</goals>
-					</execution>
-				</executions>
-
-			</plugin>
-
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<descriptors>
-						<descriptor>${basedir}/src/main/assembly/src.xml</descriptor>
-					</descriptors>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-						
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
+
+	<modules>
+		<module>backspring-core</module>
+	</modules>
 
 </project>

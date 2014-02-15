@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<resultset statement="select id from t
-" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <row>
-	<field name="id">19</field>
-  </row>
-</resultset>
