@@ -87,6 +87,12 @@
 			<groupId>quartz</groupId>
 			<artifactId>quartz</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>com.taro</groupId>
+			<artifactId>backspring-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>		
 	</dependencies>
 
 
