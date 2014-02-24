@@ -6,6 +6,7 @@
 	<formats>
 		<format>tar.gz</format>
 	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
 	<fileSets>
 		<fileSet>
 			<directory>${staging.directory}/bin</directory>
