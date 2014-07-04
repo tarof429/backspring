@@ -10,6 +10,8 @@ sed -i "s|DAEMON=/usr/sbin/backspring|DAEMON=$BASEDIR/bin/backspring-main|" $BAS
 
 cp $BASEDIR/bin/backspring /etc/init.d/backspring
 
-rm -f /etc/rc5.d/S99backspring
+chmod +x /etc/init.d/backspring
 
-ln -s ../init.d/backspring /etc/rc5.d/S99backspring
+rm -f /etc/rc2.d/S99backspring
+
+ln -s ../init.d/backspring /etc/rc2.d/S99backspring
