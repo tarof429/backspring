@@ -1,11 +1,10 @@
 !!com.taro.backspring.Configuration
-backupStrategyType: MOCK
+backupStrategyType: RSYNC
 filter:
-  excludes: ['.gvfs/']
-  includes: ['*']
+  excludes: ['.gvfs', '.kde', '.cache', 'Downloads', '.adobe', '.local', '.m2' ]
 name: My Configuration
-schedule: 30 * * * * ?
-runNow: false
+schedule: 0 30 21 * * ?
+runNow: TRUE
 sourceDirectory: /home/foo
-targetDirectory: /media/backup
-logging: FALSE
+targetDirectory: /media/Backup
+logging: TRUE
