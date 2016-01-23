@@ -1,0 +1,4 @@
+#!/bin/sh
+
+rm -f /etc/init.d/backspring
+rm -f /etc/rc2.d/S99backspring
