@@ -27,13 +27,6 @@
 		<basedir>target</basedir>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>codehaus</id>
-			<url>http://snapshots.repository.codehaus.org/</url>
-		</repository>
-	</repositories>
-
 	<scm>
 		<connection>scm:git:git@github.com/taro4cycle/backspring.git</connection>
 		<developerConnection>scm:git:git@github.com/taro4cycle/backspring.git</developerConnection>
