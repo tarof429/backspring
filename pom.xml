@@ -22,7 +22,7 @@
 	</licenses>
 
 	<properties>
-		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.9.RELEASE</org.springframework-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<basedir>target</basedir>
 	</properties>
@@ -62,6 +62,14 @@
 			<artifactId>spring-core</artifactId>
 			<version>${org.springframework-version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${org.springframework-version}</version>
+			<scope>test</scope>
+		</dependency>
+
 
 		<!-- Commons -->
 		<dependency>
@@ -112,7 +120,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.11</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
