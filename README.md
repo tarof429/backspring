@@ -10,7 +10,7 @@ A Java-based backup tool. The name comes from using Spring for DI.
 - Unpack the backspring core to your home directory (no GUI support yet)
 
   $ mkdir ~/backspring
-  $ tar xzf backspring-core/target/backspring-core-1.0.2-SNAPSHOT-dist.tar.gz -C ~/backspring
+  $ tar xzf backspring-core/target/backspring-core-<version>-dist.tar.gz -C ~/backspring
 
 - For Ubuntu, a script has been provided in the backspring/misc directory to install backsrping as a service.
 
