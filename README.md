@@ -23,7 +23,7 @@ A Java-based backup tool. The name comes from using Spring for DI.
 
 For system using systemd, see the example below:
 
-  $ sudo cp misc/systemd/backspring.service /etc/systemd/system/multi-user.target.wants
+  $ sudo cp misc/systemd/backspring.service /etc/systemd/system
   $ sudo systemctl enable backspring.service
   $ ls -l /etc/systemd/system/multi-user.target.wants/
   $ sudo systemctl daemon-reload
