@@ -1,0 +1,13 @@
+[Unit]
+Description=BackSpring - A Java-based backup tool
+
+[Service]
+Type=forking
+ExecStart=/home/taro/backspring/bin/backspring-main start
+ExecStop=/home/taro/backspring/bin/backspring-main stop
+User=taro
+Group=taro
+
+[Install]
+WantedBy=multi-user.target
+#Restart=always
