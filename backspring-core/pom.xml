@@ -202,6 +202,21 @@
 							<goal>generate-daemons</goal>
 						</goals>
 					</execution>
+					<execution>
+						<id>create-backup-lastrun</id>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+						<configuration>
+							<programs>
+						    	<program>
+          						<mainClass>com.taro.backspring.BackupLastRun</mainClass>
+          						<id>backup-last-run</id>
+        					</program>
+							</programs>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 
