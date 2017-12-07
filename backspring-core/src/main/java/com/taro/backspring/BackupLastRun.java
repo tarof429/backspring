@@ -3,6 +3,7 @@ package com.taro.backspring;
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.util.Date;
 
 public class BackupLastRun {
 	public static void main(String[] args) {
@@ -17,24 +18,18 @@ public class BackupLastRun {
 				br = new BufferedReader(new FileReader(logFile));
 				
 				String line;
-				String dateToken = "";
-				String timeToken = "";
+				Date parsedDate = null;
 
 				while ((line = br.readLine()) != null) {
-					if (line.contains("Strategy finished")) {
-						//System.out.println("Interesting line found: " + line);
-						
-						String [] tokens = line.split("\\|");
-						String interestingToken = tokens[2];
-						interestingToken = interestingToken.trim();
-						String [] detailedTokens = interestingToken.split("\\s+");
-						// System.out.println(detailedTokens);
-						dateToken = detailedTokens[0].trim();
-						timeToken = detailedTokens[1].trim();
-					 	//System.out.println("date: " + dateToken + " time: " + timeToken);
+					Date tempParsedDate = StrategyFinishedLineConverter.convert(line);
+					if (tempParsedDate != null) {
+						parsedDate = (Date)tempParsedDate.clone();
 					}
 				}
-				System.out.println("Backup last completed: " + dateToken + " at " + timeToken);
+
+				if (parsedDate != null) {
+					System.out.println("Backup last completed: " + parsedDate);
+				}
 
 			} catch (Exception e) {
 				e.printStackTrace();
