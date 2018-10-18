@@ -22,7 +22,7 @@
 	</licenses>
 
 	<properties>
-		<org.springframework-version>4.3.9.RELEASE</org.springframework-version>
+		<org.springframework-version>4.3.16.RELEASE</org.springframework-version>
 		<org.slf4j-version>1.7.5</org.slf4j-version>
 		<basedir>target</basedir>
 	</properties>
