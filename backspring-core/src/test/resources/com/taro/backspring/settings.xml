@@ -20,11 +20,12 @@
 
 	<bean id="log4jInitialization"
 		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-		<property name="targetClass" value="org.springframework.util.Log4jConfigurer" />
-		<property name="targetMethod" value="initLogging" />
+		<property name="targetClass" value="java.lang.System" />
+		<property name="targetMethod" value="setProperty" />
 		<property name="arguments">
 			<list>
-				<value>${basedir}/conf/log4j.properties</value>
+				<value>LOG4J_CONFIGURATION_FILE</value>
+				<value>${basedir}/conf/log4j2.properties</value>
 			</list>
 		</property>
 	</bean>

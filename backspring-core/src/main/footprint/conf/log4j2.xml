@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <Property name="filename">logs/backspring.log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+        <File name="File" fileName="${filename}">
+            <PatternLayout>
+                <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="org.springframework" level="error">
+            <AppenderRef ref="File" />
+        </Logger>
+        <Logger name="com.taro.backspring" level="warn" additivity="false">
+            <AppenderRef ref="File" />
+            <AppenderRef ref="Console" />
+        </Logger>
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+        </Root>
+    </Loggers>
+</Configuration>

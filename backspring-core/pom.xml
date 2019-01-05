@@ -20,6 +20,12 @@
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -41,21 +47,16 @@
 
 		<!-- Logging -->
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>log4j</groupId>
-			<artifactId>log4j</artifactId>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
 		</dependency>
 
 		<!-- @Inject -->
@@ -152,6 +153,7 @@
 					<includeConfigurationDirectoryInClasspath>true</includeConfigurationDirectoryInClasspath>
 					<extrajvmArguments>-Dbasedir=.</extrajvmArguments>
 					<extraJvmArguments>-Xms64m</extraJvmArguments>
+					<extraJvmArguments>-Dlog4j.configurationFile=$BASEDIR/conf/log4j2.xml</extraJvmArguments>
 					<configurationDirectory>conf</configurationDirectory>
 					<assembleDirectory>${staging.directory}</assembleDirectory>
 					<repositoryName>lib</repositoryName>
@@ -176,6 +178,10 @@
 										<property>
 											<name>set.default.REPO_DIR</name>
 											<value>lib</value>
+										</property>
+										<property>
+											<name>wrapper.java.additional.1</name>
+											<value>-Dlog4j.configurationFile=./conf/log4j2.xml</value>
 										</property>
 										<property>
 											<name>wrapper.logfile</name>

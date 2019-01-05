@@ -1,12 +1,21 @@
 package com.taro.backspring;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.Date;
 
 public class BackupLastRun {
+
+	private static final Logger logger = LoggerFactory
+			.getLogger(BackupLastRun.class);
+
 	public static void main(String[] args) {
+
+		logger.info("Checking last time backup was run");
 
 		File logFile = new File(System.getProperty("basedir", "."), 
 			"logs/wrapper.log");
