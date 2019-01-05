@@ -31,8 +31,7 @@
 		<connection>scm:git:git@github.com/taro4cycle/backspring.git</connection>
 		<developerConnection>scm:git:git@github.com/taro4cycle/backspring.git</developerConnection>
 		<url>scm:git:git@github.com/taro4cycle/backspring</url>
-  	  <tag>backspring-1.0.4</tag>
-  </scm>
+    </scm>
 
   	<dependencyManagement>
   		<dependencies>
@@ -41,13 +40,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
 			<version>${org.springframework-version}</version>
-			<exclusions>
-				<!-- Exclude Commons Logging in favor of SLF4j -->
-				<exclusion>
-					<groupId>commons-logging</groupId>
-					<artifactId>commons-logging</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 
 		<dependency>
@@ -79,11 +71,6 @@
 		</dependency>
 
 		<!-- Logging -->
-			<dependency>
-				<groupId>org.apache.logging.log4j</groupId>
-				<artifactId>jcl-over-slf4j</artifactId>
-				<version>2.11.1</version>
-			</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
